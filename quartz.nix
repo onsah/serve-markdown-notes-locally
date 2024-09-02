@@ -1,9 +1,10 @@
 {
   callPackage,
   fetchFromGitHub,
+  lib,
 } :
 let
-  config = import ./config.nix;
+  config = import ./config.nix { inherit lib; };
   quartz-nix = fetchFromGitHub {
     owner = "onsah";
     repo = "quartz-nix";
