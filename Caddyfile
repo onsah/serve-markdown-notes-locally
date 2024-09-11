@@ -3,4 +3,8 @@
     file_server
     try_files {path} {path}.html {path}/ =404
     header Cache-Control no-cache no-store
+    handle_errors 404 {
+        rewrite * /404.html
+        file_server
+    }
 }
