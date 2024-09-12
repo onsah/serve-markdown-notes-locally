@@ -8,8 +8,8 @@ let
   quartz-nix = fetchFromGitHub {
     owner = "onsah";
     repo = "quartz-nix";
-    rev = "368519d98f5ce52968188cd336185c1d744f2419";
-    hash = "sha256-kK6JQirOfRNJy+RdDEMQ1CafSdgHJmd/OHLgWEy+BJY=";
+    rev = "3ef25c9717661521d3588f8f7402755db99d092e";
+    hash = "sha256-qenP3e+loTaRfIWKDDSJh+eUKddr7caQBSiZjFtUjRk=";
   };
 in
 callPackage "${quartz-nix}/quartz.nix" { content = config.content; }
