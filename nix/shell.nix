@@ -11,7 +11,7 @@
 let
   quartz = callPackage ./quartz.nix {};
   serve-live = writeShellScriptBin "serve-live" ''
-    ${quartz}/bin/quartz build --directory ${config.content} --serve
+    ${quartz}/bin/quartz build --directory ${config.path} --serve
   '';
 in mkShellNoCC {
   packages = [
