@@ -3,13 +3,21 @@ Serve markdown notes as a website locally.
 
 ## Setup
 1. Clone this repo
-2. Create `config.nix` file:
-```nix
-{ lib }:
-{
-  content = ./path/to/content;
-}
-```
+2. Create `config.nix` file. Example config in `config.nix.sample`.
 
 ## Usage
-To launch the website, run `make serve`.
+
+### Build website
+```
+make build-notes
+```
+
+### Serve built files
+```
+make serve
+```
+
+### Live Preview
+```
+make serve-live
+```

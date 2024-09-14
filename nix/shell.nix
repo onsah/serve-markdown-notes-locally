@@ -5,13 +5,13 @@
   git,
   caddy,
   # Additional inputs
-  config,
+  path, # relative path to notes
 }:
 
 let
   quartz = callPackage ./quartz.nix {};
   serve-live = writeShellScriptBin "serve-live" ''
-    ${quartz}/bin/quartz build --directory ${config.path} --serve
+    ${quartz}/bin/quartz build --directory ${path} --serve
   '';
 in mkShellNoCC {
   packages = [

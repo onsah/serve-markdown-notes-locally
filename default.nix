@@ -4,13 +4,13 @@
 }:
 let
   pkgs = import sources.nixpkgs { inherit system; };
-  config = pkgs.callPackage ./config.nix {};
+  config = import ./config.nix;
 in
 {
   quartz-notes = pkgs.callPackage ./nix/quartz-notes.nix {
-    inherit config;
+    path = ./. + "/${config.path}";
   };
   shell = pkgs.callPackage ./nix/shell.nix {
-    inherit config;
+    path = config.path;
   };
 }
