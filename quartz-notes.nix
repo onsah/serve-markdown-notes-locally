@@ -15,6 +15,7 @@ stdenv.mkDerivation {
 
   buildPhase = ''
     mkdir $out
-    ${quartz}/bin/quartz build --directory ./ --output $out
+    mkdir $out/public
+    ${quartz}/bin/quartz build --directory ./ --output $out/public
   '';
 }
