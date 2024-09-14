@@ -5,4 +5,4 @@ serve: build-notes
 	caddy run --config Caddyfile
 
 serve-live:
-	quartz build --directory ../Notes/Public --serve
+	serve-live
