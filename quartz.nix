@@ -1,15 +1,13 @@
 {
   callPackage,
   fetchFromGitHub,
-  lib,
 } :
 let
-  config = import ./config.nix { inherit lib; };
-  quartz-nix = fetchFromGitHub {
+  quartz-src = fetchFromGitHub {
     owner = "onsah";
     repo = "quartz-nix";
-    rev = "6fd3d6373f9a700ed901f2de82950e22f993bd45";
-    hash = "sha256-8VHighIus2spB1IgQiW6EiZNAhjW1YlcUj/vwEcUUVI=";
+    rev = "d765bb9763bdafdbf45996628aa306f95c17e8cf";
+    hash = "sha256-QrvmcG65T3ahGNHa/9CL2/VX4r2poCyltTWeC1nykEw=";
   };
 in
-callPackage "${quartz-nix}/quartz.nix" { content = config.content; }
+callPackage "${quartz-src}/quartz.nix" {}
